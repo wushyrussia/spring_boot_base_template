@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1 align="center">Person list шаблон</h1>
+<p>Person:<b th:text="${firstPerson.name}"></b></p>
+<p>Person age:<b th:text="${firstPerson.getAge()}"></b></p>
+<hr>
+<p>Person:<b th:text="${secondPerson.name}"></b></p>
+<p>Person age:<b th:text="${secondPerson.getAge()}"></b></p>
+</body>
+</html>
