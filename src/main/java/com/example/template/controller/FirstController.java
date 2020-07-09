@@ -1,7 +1,6 @@
 package com.example.template.controller;
 
 import com.example.template.model.Person;
-import org.hibernate.dialect.lock.PessimisticEntityLockException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +14,7 @@ public class FirstController {
     @GetMapping("/feed")
     public String getViewWithOutModel() {
         //возвращает шаблон страницы firstExample.html из папки resources/templates
-        return "firstExample";
+        return "firstLesson/firstExample";
     }
 
     @GetMapping("/singlePerson")
@@ -27,7 +26,7 @@ public class FirstController {
 
         //добавили объект в модель(положили)
         model.addAttribute("personKeyOne", person);
-        return "singlePerson";
+        return "firstLesson/singlePerson";
     }
 
     @GetMapping("/twoPerson")
@@ -40,7 +39,7 @@ public class FirstController {
         model.addAttribute("firstPerson",personOne);
         model.addAttribute("secondPerson",personTwo);
 
-        return "twoPerson";
+        return "firstLesson/twoPerson";
         }
 
     @GetMapping("/personList")
@@ -59,6 +58,6 @@ public class FirstController {
         //положили коллекцию в модель
         model.addAttribute("people",people);
 
-        return "personList";
+        return "firstLesson/personList";
     }
 }
