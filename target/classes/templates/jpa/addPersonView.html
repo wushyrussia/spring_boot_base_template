@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/addPersonView">Добавить пользователя </a>
+<a href="/persons">Посмотреть всех пользователей</a>
+<h1>Добавить пользователя</h1>
+<form method="post" action="/addPerson">
+    <p>Введите имя:</p>
+    <input type="text" name="nameParam" label>
+    <p>Введите возраст:</p>
+    <input type="number" name="ageParam"></input>
+    <br>
+    <button type="submit">Кнопка</button>
+</form>
+</body>
+</html>

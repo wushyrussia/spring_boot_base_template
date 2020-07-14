@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Отправьте свои данные в ФСБ!</h1>
+<form method="get" action="/inputNameAgePageProcess">
+    <p>Введите имя:</p>
+    <input type="text" name="nameParam" label>
+    <p>Введите возраст:</p>
+    <input type="number" name="ageParam"></input>
+    <br>
+    <p>Введите город:</p>
+    <input type="text" name="cityParam" label>
+    <p>Введите дата:</p>
+    <input type="date" name="dateParam" label>
+    <button type="submit">Кнопка</button>
+</form>
+</body>
+</html>
