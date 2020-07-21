@@ -1,6 +1,6 @@
 package com.example.template.controller;
 
-import com.example.template.model.Person;
+import com.example.template.entity.Person;
 import com.example.template.repositories.PersonRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

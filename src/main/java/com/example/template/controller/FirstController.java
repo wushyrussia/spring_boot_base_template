@@ -1,6 +1,6 @@
 package com.example.template.controller;
 
-import com.example.template.model.Person;
+import com.example.template.entity.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

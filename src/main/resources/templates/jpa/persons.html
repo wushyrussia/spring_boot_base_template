@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<a href="/addPersonView">Добавить пользователя </a>
-<a href="/persons">Посмотреть всех пользователей</a>
-<h1>Добавить пользователя</h1>
-<table>
-    <tr><td>id</td><td>Имя</td><td>Возраст</td></tr>
-    <tr th:each="element : ${person}">
-        <td th:text="${element.id}">id</td>
-        <td th:text="${element.name}">Имя</td>
-        <td th:text="${element.age}">Возраст</td>
-    </tr>
-</table>
-</body>
-</html>
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<a href="/addPersonView">Добавить пользователя </a>-->
+<!--<a href="/persons">Посмотреть всех пользователей</a>-->
+<!--<h1>Добавить пользователя</h1>-->
+<!--<table>-->
+<!--    <tr><td>id</td><td>Имя</td><td>Возраст</td></tr>-->
+<!--    <tr th:each="element : ${person}">-->
+<!--        <td th:text="${element.id}">id</td>-->
+<!--        <td th:text="${element.name}">Имя</td>-->
+<!--        <td th:text="${element.age}">Возраст</td>-->
+<!--    </tr>-->
+<!--</table>-->
+<!--</body>-->
+<!--</html>-->
