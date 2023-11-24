@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/addPersonView">Добавить пользователя </a>
+<a href="/persons">Посмотреть всех пользователей</a>
+<h1>Добавить пользователя</h1>
+<table>
+    <tr><td>Имя</td><td>Возраст</td><td>Лого</td><td>пароль</td><td>Номер карты</td></tr>
+    <tr th:each="element : ${person}">
+        <td th:text="${element.name}">Имя</td>
+        <td th:text="${element.age}">Возраст</td>
+        <td th:text="${element.logo}">Лого</td>
+        <td th:text="${element.password}">пароль</td>
+        <td th:text="${element.cardNumber}">Номер карты</td>
+
+    </tr>
+</table>
+</body>
+</html>
