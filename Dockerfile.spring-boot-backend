@@ -1,0 +1,25 @@
+FROM maven:3.6.3-jdk-8
+
+# Set the working directory in the Docker image
+WORKDIR /app
+
+# Copy the pom.xml and source code
+COPY pom.xml /app/
+COPY src /app/src
+
+# Build the application
+RUN mvn clean package -DskipTests
+
+# Set the entrypoint to run the Spring Boot application
+ENTRYPOINT ["java", "-jar", "target/template-0.0.1-SNAPSHOT.jar"]
+
+# Expose the port the application runs on
+EXPOSE 8080
+
+# Set environment variables
+ENV server.port=8080
+ENV spring.datasource.url=jdbc:postgresql://localhost:5432/dbname
+ENV spring.datasource.driverClassName=org.postgresql.Driver
+ENV spring.datasource.username=dbuser
+ENV spring.datasource.password=dbpass
+ENV spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
