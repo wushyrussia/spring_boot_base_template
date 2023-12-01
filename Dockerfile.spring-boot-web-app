@@ -1,0 +1,31 @@
+FROM openjdk:11-jdk-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the Maven pom.xml and source code
+COPY pom.xml /app/pom.xml
+COPY src /app/src
+
+# Install Maven, compile the project, and clean up
+RUN apt-get update && \
+    apt-get install -y maven && \
+    mvn -f /app/pom.xml clean package -DskipTests && \
+    mv /app/target/*.jar /app/app.jar && \
+    apt-get remove -y maven && \
+    apt-get autoremove -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /app/src /app/pom.xml /app/target
+
+# Set environment variables
+ENV SERVER_PORT=8080 \
+    SPRING_DATASOURCE_URL=jdbc:h2:mem:testdb \
+    SPRING_DATASOURCE_USERNAME=sa \
+    SPRING_DATASOURCE_PASSWORD=password \
+    SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.H2Dialect
+
+# Expose the port the app runs on
+EXPOSE $SERVER_PORT
+
+# Run the jar file
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
